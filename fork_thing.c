@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 16:59:08 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 00:30:35 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:05:58 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	philo_fork_down(t_philo *philo, int l_fork, int r_fork)
 {
-	philo->common->fork[l_fork] = -1;
-	philo->common->fork[r_fork] = -1;
+	philo->common->fork[l_fork] = 0;
+	philo->common->fork[r_fork] = 0;
 	pthread_mutex_unlock(&philo->common->mutex_id[l_fork]);
 	pthread_mutex_unlock(&philo->common->mutex_id[r_fork]);
 }
@@ -33,7 +33,7 @@ void	philo_get_fork(t_philo *philo, int l_fork, int r_fork, int philo_num)
 
 void	philo_see_fork(t_philo *philo)
 {
-	if (philo->num % 2 == 0)
-		usleep(300);
+	// if (philo->num % 2 == 0)
+	// 	usleep(200);
 	philo_get_fork(philo, philo->l_fork, philo->r_fork, philo->num);
 }

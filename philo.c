@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 22:42:43 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 02:58:37 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:04:59 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	fill_common_info(t_common *common)
 		pthread_mutex_init(&(common->mutex_id)[i], NULL);
 	pthread_mutex_init(&common->print_mutex, NULL);
 	common->fork = malloc(sizeof(int) * common->philo_numbers);
-	memset(common->fork, -1, common->philo_numbers);
+	memset(common->fork, 0, common->philo_numbers);
 	common->thread_id = malloc(sizeof(pthread_t) * common->philo_numbers);
 }
 
@@ -35,10 +35,10 @@ void	mutex_destroy(t_common *common)
 	i = -1;
 	while (++i < common->philo_numbers)
 	{
-		usleep(10);
+		// usleep(10);
 		pthread_mutex_destroy(&(common->mutex_id)[i]);
 	}
-	usleep(10);
+	// usleep(10);
 	pthread_mutex_destroy(&common->print_mutex);
 }
 
@@ -52,6 +52,7 @@ int	start_philo(t_philo *philo, t_common *common)
 		pthread_create(&(common->thread_id[i]),
 			NULL, philo_activate, &philo[i]);
 		pthread_detach(common->thread_id[i]);
+		usleep(100);
 	}
 	while (1)
 	{

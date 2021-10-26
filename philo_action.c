@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 16:45:40 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 02:04:13 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:07:13 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void	*philo_activate(void *arg)
 	while (1)
 	{
 		philo_see_fork(philo);
-		usleep(200);
-		if (common->check_flag == 1)
-			break ;
+		// usleep(200);
+		// if (common->check_flag == 1)
+		// 	break ;
 		philo_eat(philo);
-		usleep(200);
-		if (common->check_flag == 1)
-			break ;
+		// usleep(200);
+		// if (common->check_flag == 1)
+		// 	break ;
 		philo_sleep(philo);
-		usleep(200);
-		if (common->check_flag == 1)
-			break ;
+		// usleep(200);
+		// if (common->check_flag == 1)
+		// 	break ;
 		philo_think(philo);
 	}
 	return (arg);
