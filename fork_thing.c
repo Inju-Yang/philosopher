@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 16:59:08 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 20:05:58 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:39:37 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,5 @@ void	philo_get_fork(t_philo *philo, int l_fork, int r_fork, int philo_num)
 
 void	philo_see_fork(t_philo *philo)
 {
-	// if (philo->num % 2 == 0)
-	// 	usleep(200);
 	philo_get_fork(philo, philo->l_fork, philo->r_fork, philo->num);
 }

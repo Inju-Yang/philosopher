@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 22:42:43 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 20:04:59 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:46:35 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ void	mutex_destroy(t_common *common)
 
 	i = -1;
 	while (++i < common->philo_numbers)
-	{
-		// usleep(10);
 		pthread_mutex_destroy(&(common->mutex_id)[i]);
-	}
-	// usleep(10);
 	pthread_mutex_destroy(&common->print_mutex);
 }
 

@@ -6,7 +6,7 @@
 /*   By: inyang <inyang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:14:52 by inyang            #+#    #+#             */
-/*   Updated: 2021/10/26 17:04:34 by inyang           ###   ########.fr       */
+/*   Updated: 2021/10/26 20:46:43 by inyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	time_to_die_check(t_philo *philo, t_common *common)
 {
-	int	i;
+	int				i;
 	unsigned long	time;
 
 	i = -1;
@@ -33,6 +33,7 @@ int	time_to_die_check(t_philo *philo, t_common *common)
 			common->philo_must_eat_flag++;
 			philo[i].eat_cnt++;
 		}
+		usleep(100);
 	}
 	return (0);
 }
